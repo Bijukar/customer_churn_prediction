@@ -5,9 +5,11 @@ from typing import Literal
 import pandas as pd
 import numpy as np
 import pickle
+from pathlib import Path
 
-
-with open('D:\Resume Project\churn predction\models\model.pkl','rb')as f:
+BASE_DIR=Path(__file__).resolve().parent.parent
+MODEL_DIR=BASE_DIR/"model"/"model.pkl"
+with open(MODEL_DIR,'rb')as f:
     model=pickle.load(f)
 app=FastAPI()
 
